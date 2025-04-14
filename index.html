@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anurag Seksaria</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#EBF5FF',
+              100: '#E1EFFE',
+              600: '#2563EB',
+              700: '#1D4ED8',
+              800: '#1E40AF',
+              900: '#1E3A8A',
+            },
+            secondary: {
+              100: '#F3F4F6',
+              200: '#E5E7EB',
+              900: '#111827',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    .section-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .section-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+  <!-- Top Notification Bar -->
+  <div class="bg-gradient-to-r from-primary-900 to-primary-800 text-sm text-white py-2.5 px-4 flex justify-between items-center">
+    <div></div>
+    <div class="flex items-center gap-8 text-sm">
+      <span class="flex items-center text-white/90 hover:text-white transition-colors"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +91 987 654 3210</span>
+      <span class="flex items-center text-white/90 hover:text-white transition-colors"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Bengaluru, India</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-primary-900">
+        <img src="Assets/Logo/AS_AS-logo-long-color.png" alt="Anurag Seksaria" class="h-12">
+      </h1>
+      <nav class="space-x-10 text-sm font-medium hidden md:flex">
+        <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors">Home</a>
+        <a href="#programs" class="text-gray-700 hover:text-primary-600 transition-colors">Programs</a>
+        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors">About</a>
+        <a href="#clients" class="text-gray-700 hover:text-primary-600 transition-colors">Clients</a>
+        <a href="#partners" class="text-gray-700 hover:text-primary-600 transition-colors">Partners</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner Section -->
+  <section id="home" class="bg-gradient-to-b from-primary-50 via-primary-50/50 to-white py-24 overflow-hidden">
+    <div class="container mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
+      <div class="space-y-8 animate-fade-in">
+        <div class="inline-block px-4 py-1 bg-primary-100 text-primary-600 rounded-full text-sm font-medium mb-4">
+          Welcome to Excellence
+        </div>
+        <h2 class="text-5xl font-bold leading-tight text-gray-900">Capability Building & <span class="text-primary-600 relative">Outcome-Based Consulting<span class="absolute bottom-0 left-0 w-full h-1 bg-primary-600/20"></span></span></h2>
+        <p class="text-lg text-gray-600">Focus Areas: Lean, Six Sigma, Data Science, Predictive Modeling, AI, Experimental Design, Causal Iterance</p>
+        <div class="flex gap-4">
+          <a href="#contact" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-all duration-300 text-sm font-semibold shadow-sm hover:shadow-md hover:-translate-y-0.5">
+            Contact Now
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#programs" class="inline-flex items-center px-8 py-4 bg-white text-primary-600 border border-primary-600/20 rounded-lg hover:bg-primary-50 transition-all duration-300 text-sm font-semibold hover:-translate-y-0.5">
+            View Programs
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <img src="Assets/Photos/anurag-seksaria.png" alt="Anurag Seksaria" class="w-full max-w-lg h-auto float-animation">
+      </div>
+    </div>
+  </section>
+
+  <!-- Focus Areas Slider Section -->
+  <section class="py-24 bg-white section-fade">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-bold mb-6 text-gray-900">Our Focus Areas</h2>
+        <p class="text-lg text-gray-600">
+          All our consultants & Trainers have experience of leading change in large organizations.
+          The programs are conducted based on real life case studies and data sets.
+        </p>
+      </div>
+
+      <!-- Slider Container -->
+      <div class="relative">
+        <!-- Slider Wrapper -->
+        <div class="overflow-hidden">
+          <div class="flex transition-transform duration-500 ease-in-out transform" id="slider">
+            <!-- Slide 1 -->
+            <div class="min-w-full md:min-w-[33.333%] px-4">
+              <div class="bg-primary-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <img src="Assets/Focus_areas/DS.png" alt="Data Science" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Data Science Essentials for Leaders</h3>
+                  <a href="#" class="text-primary-600 hover:text-primary-700 transition duration-300 inline-flex items-center">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="min-w-full md:min-w-[33.333%] px-4">
+              <div class="bg-primary-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <img src="Assets/Focus_areas/NLP.png" alt="Sentiment Analysis" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Sentiment Analysis & NLP</h3>
+                  <a href="#" class="text-primary-600 hover:text-primary-700 transition duration-300 inline-flex items-center">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="min-w-full md:min-w-[33.333%] px-4">
+              <div class="bg-primary-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <img src="Assets/Focus_areas/AIMLFintech.png" alt="Machine Learning" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Machine Learning & AI for Financial Service</h3>
+                  <a href="#" class="text-primary-600 hover:text-primary-700 transition duration-300 inline-flex items-center">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="min-w-full md:min-w-[33.333%] px-4">
+              <div class="bg-primary-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <img src="Assets/Focus_areas/Pharma.png" alt="Six Sigma" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Lean Six Sigma Green Belt for Pharma Industry</h3>
+                  <a href="#" class="text-primary-600 hover:text-primary-700 transition duration-300 inline-flex items-center">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="min-w-full md:min-w-[33.333%] px-4">
+              <div class="bg-primary-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <img src="Assets/Focus_areas/leanglobal.png" alt="Lean Services" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Lean for Global Business Services</h3>
+                  <a href="#" class="text-primary-600 hover:text-primary-700 transition duration-300 inline-flex items-center">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="min-w-full md:min-w-[33.333%] px-4">
+              <div class="bg-primary-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <img src="Assets/Focus_areas/Healthcare.png" alt="Healthcare Analytics" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Healthcare Analytics</h3>
+                  <a href="#" class="text-primary-600 hover:text-primary-700 transition duration-300 inline-flex items-center">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="min-w-full md:min-w-[33.333%] px-4">
+              <div class="bg-primary-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <img src="Assets/Focus_areas/Telecom.png" alt="Telecom Analytics" class="w-full h-48 object-cover">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Telecom Analytics</h3>
+                  <a href="#" class="text-primary-600 hover:text-primary-700 transition duration-300 inline-flex items-center">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none" onclick="moveSlider('prev')">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 focus:outline-none" onclick="moveSlider('next')">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <!-- Dots Navigation -->
+        <div class="flex justify-center mt-8 space-x-2">
+          <button class="w-3 h-3 rounded-full bg-primary-600" onclick="goToSlide(0)"></button>
+          <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary-600" onclick="goToSlide(1)"></button>
+          <button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-primary-600" onclick="goToSlide(2)"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider JavaScript -->
+    <script>
+      let currentSlide = 0;
+      const slider = document.getElementById('slider');
+      const slideCount = 7;
+      const slidesVisible = window.innerWidth >= 768 ? 3 : 1;
+
+      function moveSlider(direction) {
+        if (direction === 'next') {
+          currentSlide = (currentSlide + 1) % (slideCount - slidesVisible + 1);
+        } else {
+          currentSlide = (currentSlide - 1 + (slideCount - slidesVisible + 1)) % (slideCount - slidesVisible + 1);
+        }
+        updateSlider();
+      }
+
+      function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+      }
+
+      function updateSlider() {
+        const offset = -(currentSlide * (100 / slidesVisible));
+        slider.style.transform = `translateX(${offset}%)`;
+        updateDots();
+      }
+
+      function updateDots() {
+        const dots = document.querySelectorAll('.dots button');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('bg-primary-600', index === currentSlide);
+          dot.classList.toggle('bg-gray-300', index !== currentSlide);
+        });
+      }
+
+      // Auto-slide every 5 seconds
+      setInterval(() => moveSlider('next'), 5000);
+
+      // Update slider on window resize
+      window.addEventListener('resize', () => {
+        const newSlidesVisible = window.innerWidth >= 768 ? 3 : 1;
+        if (newSlidesVisible !== slidesVisible) {
+          location.reload();
+        }
+      });
+    </script>
+  </section>
+
+  <!-- About Teaser -->
+  <section id="about" class="bg-gradient-to-b from-gray-50 via-white to-white py-24 section-fade">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-16">About Anurag Seksaria</h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Left Column -->
+        <div class="space-y-6">
+          <div>
+            <p class="text-gray-700 mb-6">Anurag started his entrepreneurial journey in January 2021 and currently running his own consulting firm focused on Capability Building and Outcome based consulting using Data Science, Six Sigma, Lean and related frameworks.</p>
+            
+            <p class="text-gray-700 mb-6">Over last three decades Anurag has experienced the journey of Statistics to Data Science and Quality to Business Excellence. He is Masters in Statistics with specialization in Quality Reliability and Operations Research from Indian Statical Institute.</p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-primary-900">Key Experience</h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-gray-900">Deutsche Bank</h4>
+                <p class="text-gray-700">Created global capacity modeling & predictive modeling frameworks deployed to over 16 locations globally, helping businesses manage market-events-driven transaction processing volume spikes. Extended process excellence knowledge to automation and IT solution design and delivery.</p>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-900">Asea Brown Boveri (ABB)</h4>
+                <p class="text-gray-700">Developed and delivered comprehensive training programs including "Quality in Design", "Quality in Manufacturing" and "Quality in Transaction Processing" across multiple ABB locations in India.</p>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-900">Aditya Birla Management Corporation</h4>
+                <p class="text-gray-700">Built the Capability and Deployment framework and implemented it in Non Ferrous Metals companies in India and overseas units involved in Chemical, Textile and Fiber plants business.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-primary-900">Professional Achievements</h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-700">
+              <li>Assessor for EFQM Model and HR Excellence Model from CII</li>
+              <li>Trained by Prof Kano in Strategic Quality Management</li>
+              <li>Published and presented various papers in National & International Conferences</li>
+              <li>Case studies focused on Manufacturing and Service Industry implementations</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-primary-900">Academic Contributions</h3>
+            <p class="text-gray-700 mb-4">Visiting faculty at prestigious institutions:</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>IIM Indore</li>
+              <li>IIM Udaipur</li>
+              <li>IIM Shillong</li>
+            </ul>
+            <p class="text-gray-700 mt-4">Delivers both Core and Elective modules focusing on Operations, Analytics, and Business Excellence.</p>
+          </div>
+
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold mb-4 text-primary-900">Areas of Expertise</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Data Science</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Six Sigma</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Lean Management</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Quality Management</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Business Excellence</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Process Excellence</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Capability Building</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section id="programs" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Our Programs</h2>
+      <p class="text-center max-w-2xl mx-auto text-gray-600 mb-12">All our consultants and trainers bring real-world experience in leading change across large organizations. Every program is based on real case studies and datasets.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-primary-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">Lean Six Sigma Green Belt – Process Industries</h3>
+          <p class="text-sm text-gray-700 mb-1">Pharma & Metals</p>
+          <p class="text-sm text-gray-500 mb-2">In-company only</p>
+          <a href="#" class="text-primary-600 text-sm hover:text-primary-700 transition duration-300">Download Brochure →</a>
+        </div>
+        <div class="bg-primary-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">Lean Six Sigma Green Belt – Banking & Financial Services</h3>
+          <p class="text-sm text-gray-700 mb-1">In-company and for B-school students</p>
+        </div>
+        <div class="bg-primary-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">Sentiment Analysis & NLP</h3>
+          <p class="text-sm text-gray-700 mb-1">15–16 & 22–23 March 2023</p>
+          <p class="text-sm text-gray-500 mb-2">Virtual (2–6 PM IST)</p>
+          <a href="#" class="text-primary-600 text-sm hover:text-primary-700 transition duration-300">Download Brochure →</a>
+        </div>
+        <div class="bg-primary-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">Data Science Essentials for Business Leaders</h3>
+          <p class="text-sm text-gray-700 mb-1">Learn ML & AI with No Coding</p>
+          <p class="text-sm text-gray-500 mb-2">11–13 & 18–19 Jan 2023 | Virtual (2–4 PM IST)</p>
+          <a href="#" class="text-primary-600 text-sm hover:text-primary-700 transition duration-300">Download Brochure →</a>
+        </div>
+        <div class="bg-primary-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">Machine Learning & AI for Finance</h3>
+          <p class="text-sm text-gray-700 mb-1">Low Code Tools</p>
+          <p class="text-sm text-gray-500 mb-2">15–16 & 22–23 Feb 2023 | Virtual (2–4 PM IST)</p>
+          <a href="#" class="text-primary-600 text-sm hover:text-primary-700 transition duration-300">Download Brochure →</a>
+        </div>
+        <div class="bg-primary-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">Data Science for HR Professionals</h3>
+          <p class="text-sm text-gray-700 mb-1">1–2 Dec 2022 | Mumbai</p>
+          <p class="text-sm text-gray-500 mb-2">Classroom session</p>
+          <a href="#" class="text-primary-600 text-sm hover:text-primary-700 transition duration-300">Download Brochure →</a>
+        </div>
+        <div class="bg-primary-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">Lean for Service Industry & GBS</h3>
+          <p class="text-sm text-gray-700 mb-1">In-company & academic</p>
+          <a href="#" class="text-primary-600 text-sm hover:text-primary-700 transition duration-300">Download Brochure →</a>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h3 class="text-2xl font-semibold mb-4 text-center">Recently Delivered Programs</h3>
+        <ul class="text-gray-700 space-y-2 text-center">
+          <li>• Multiple batches of Lean Six Sigma Green Belt for pharma companies</li>
+          <li>• Data Science Essentials for Leaders – Aug 2022</li>
+          <li class="text-sm text-gray-500">Attendees from: Apex CoVantage, Gennova Bio, Honeywell, HORIBA, Kirtilal Kalidas, Lucas TVS, Toyota Kirloskar, Vipra Machine Tools, XIME</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-24 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-16">Gallery</h2>
+      
+      <!-- Gallery Slider -->
+      <div class="relative overflow-hidden">
+        <div class="flex transition-transform duration-500 ease-in-out" id="gallerySlider">
+          <!-- Gallery Images -->
+          <div class="min-w-full">
+            <img src="Assets/Gallery/Image 1.jpg" alt="Gallery Image 1" class="w-full h-[600px] object-cover rounded-lg">
+          </div>
+          <div class="min-w-full">
+            <img src="Assets/Gallery/Image 2.jpg" alt="Gallery Image 2" class="w-full h-[600px] object-cover rounded-lg">
+          </div>
+          <div class="min-w-full">
+            <img src="Assets/Gallery/Image 3.jpg" alt="Gallery Image 3" class="w-full h-[600px] object-cover rounded-lg">
+          </div>
+          <div class="min-w-full">
+            <img src="Assets/Gallery/bangkok.jpeg" alt="Gallery Image 4" class="w-full h-[600px] object-cover rounded-lg">
+          </div>
+          <div class="min-w-full">
+            <img src="Assets/Gallery/photo3.jpeg" alt="Gallery Image 5" class="w-full h-[600px] object-cover rounded-lg">
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-3 rounded-full shadow-lg hover:bg-white focus:outline-none" onclick="moveGallerySlider('prev')">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 p-3 rounded-full shadow-lg hover:bg-white focus:outline-none" onclick="moveGallerySlider('next')">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <!-- Dots Navigation -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <button class="w-3 h-3 rounded-full bg-white" onclick="goToGallerySlide(0)"></button>
+          <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" onclick="goToGallerySlide(1)"></button>
+          <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" onclick="goToGallerySlide(2)"></button>
+          <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" onclick="goToGallerySlide(3)"></button>
+          <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" onclick="goToGallerySlide(4)"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery JavaScript -->
+    <script>
+      let currentGallerySlide = 0;
+      const gallerySlider = document.getElementById('gallerySlider');
+      const gallerySlideCount = 5;
+
+      function moveGallerySlider(direction) {
+        if (direction === 'next') {
+          currentGallerySlide = (currentGallerySlide + 1) % gallerySlideCount;
+        } else {
+          currentGallerySlide = (currentGallerySlide - 1 + gallerySlideCount) % gallerySlideCount;
+        }
+        updateGallerySlider();
+      }
+
+      function goToGallerySlide(index) {
+        currentGallerySlide = index;
+        updateGallerySlider();
+      }
+
+      function updateGallerySlider() {
+        const offset = -(currentGallerySlide * 100);
+        gallerySlider.style.transform = `translateX(${offset}%)`;
+        updateGalleryDots();
+      }
+
+      function updateGalleryDots() {
+        const dots = document.querySelectorAll('#gallerySlider + .absolute.bottom-4 button');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('bg-white', index === currentGallerySlide);
+          dot.classList.toggle('bg-white/50', index !== currentGallerySlide);
+        });
+      }
+
+      // Auto-slide every 5 seconds
+      setInterval(() => moveGallerySlider('next'), 5000);
+    </script>
+  </section>
+
+  <!-- Client Section -->
+  <section id="clients" class="py-24 bg-gradient-to-b from-gray-50 via-white to-white section-fade">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-16">Our Clients</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-16 items-center justify-items-center max-w-5xl mx-auto">
+        <img src="Assets/Clients/ABH.png" alt="ABH" class="w-[300px] h-auto">
+        <img src="Assets/Clients/Drreddys.png" alt="Dr. Reddy's" class="w-[300px] h-auto">
+        <img src="Assets/Clients/Aurobindo.png" alt="Aurobindo Pharma" class="w-[300px] h-auto">
+        <img src="Assets/Clients/Delh-IGIA-GMR.png" alt="GMR Delhi IGIA" class="w-[300px] h-auto">
+        <img src="Assets/Clients/Mahyco.png" alt="Mahyco" class="w-[300px] h-auto">
+        <img src="Assets/Clients/ACGcapsules.png" alt="ACG Capsules" class="w-[300px] h-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section id="case-studies" class="py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-16">Case Studies</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        
+        <!-- Case Study 1 -->
+        <div class="group">
+          <div class="aspect-w-16 aspect-h-9 mb-4">
+            <img src="Assets/Focus_areas/DS.png" alt="Taguchi Transfer Function" class="w-full h-64 object-cover">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Building Robust Product through Taguchi Transfer Function</h3>
+          <p class="text-gray-600 mb-4">Implementation of advanced statistical methods to enhance product quality and reliability.</p>
+          <a href="#" class="text-primary-600 hover:text-primary-700 inline-flex items-center">
+            Read More
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="group">
+          <div class="aspect-w-16 aspect-h-9 mb-4">
+            <img src="Assets/Focus_areas/AIMLFintech.png" alt="Machine Learning" class="w-full h-64 object-cover">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Process Optimization Using Machine Learning</h3>
+          <p class="text-gray-600 mb-4">Leveraging ML algorithms to optimize complex manufacturing processes.</p>
+          <a href="#" class="text-primary-600 hover:text-primary-700 inline-flex items-center">
+            Read More
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="group">
+          <div class="aspect-w-16 aspect-h-9 mb-4">
+            <img src="Assets/Focus_areas/Pharma.png" alt="Process Consistency" class="w-full h-64 object-cover">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Achieving Process Consistency through DOE</h3>
+          <p class="text-gray-600 mb-4">Design of Experiments implementation for pharmaceutical process optimization.</p>
+          <a href="#" class="text-primary-600 hover:text-primary-700 inline-flex items-center">
+            Read More
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Case Study 4 -->
+        <div class="group">
+          <div class="aspect-w-16 aspect-h-9 mb-4">
+            <img src="Assets/Focus_areas/NLP.png" alt="Training Effectiveness" class="w-full h-64 object-cover">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Improving Training Effectiveness using Sentiment Analysis</h3>
+          <p class="text-gray-600 mb-4">Using NLP and sentiment analysis to enhance training program outcomes.</p>
+          <a href="#" class="text-primary-600 hover:text-primary-700 inline-flex items-center">
+            Read More
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Case Study 5 -->
+        <div class="group">
+          <div class="aspect-w-16 aspect-h-9 mb-4">
+            <img src="Assets/Focus_areas/leanglobal.png" alt="Sales Initiatives" class="w-full h-64 object-cover">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Optimizing Sales Initiatives in Retail Banking</h3>
+          <p class="text-gray-600 mb-4">Predictive modeling implementation to enhance banking sales performance.</p>
+          <a href="#" class="text-primary-600 hover:text-primary-700 inline-flex items-center">
+            Read More
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Case Study 6 -->
+        <div class="group">
+          <div class="aspect-w-16 aspect-h-9 mb-4">
+            <img src="Assets/Focus_areas/Healthcare.png" alt="Six Sigma for Farmers" class="w-full h-64 object-cover">
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Six Sigma for Farmers</h3>
+          <p class="text-gray-600 mb-4">Implementing quality management principles in agricultural practices.</p>
+          <a href="#" class="text-primary-600 hover:text-primary-700 inline-flex items-center">
+            Read More
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Section -->
+  <section id="partners" class="py-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12">Our Partners</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div>
+          <img src="https://placehold.co/300x200?text=Image" alt="Partner Photo" class="h-24 mx-auto mb-4">
+          <h4 class="font-semibold">Subrata Mitra Majumdar</h4>
+          <p class="text-sm text-gray-600">30+ years in OpEx across Kennametal, Tata AutoComp, Saint-Gobain.</p>
+        </div>
+        <div>
+          <img src="https://placehold.co/300x200?text=Image" alt="Partner Photo" class="h-24 mx-auto mb-4">
+          <h4 class="font-semibold">Shiva</h4>
+          <p class="text-sm text-gray-600">EFQM & Baldrige Specialist, Former Head at CII Business Excellence.</p>
+        </div>
+        <div>
+          <img src="https://placehold.co/300x200?text=Image" alt="Partner Photo" class="h-24 mx-auto mb-4">
+          <h4 class="font-semibold">Keya Choudhury Ganguli</h4>
+          <p class="text-sm text-gray-600">Ex-NTT Data, Dell – Analytics & Quality Leader with 30+ yrs exp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnerships & Associations Section -->
+  <section id="associations" class="py-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-10">Partnerships & Associations</h2>
+      <p class="max-w-2xl mx-auto text-gray-700 mb-12">Anurag is a visiting faculty at top Indian B-schools, delivering core and elective modules in Operations, Analytics, and Business Excellence.</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-16 items-center justify-items-center">
+        <img src="Assets/Partnerships/IIMI.png" alt="IIM Indore" class="w-[300px] h-auto">
+        <img src="Assets/Partnerships/IIMU.png" alt="IIM Udaipur" class="w-[300px] h-auto">
+        <img src="Assets/Partnerships/SCMHRD.png" alt="SCMHRD" class="w-[300px] h-auto">
+        <img src="Assets/Partnerships/CIII.png" alt="CII" class="w-[300px] h-auto">
+        <img src="Assets/Partnerships/BMCC.png" alt="BMCC" class="w-[300px] h-auto">
+        <img src="Assets/Partnerships/IIMS.png" alt="IIM Shillong" class="w-[300px] h-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Progress Section -->
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4 text-gray-900">Our Group is committed to help clients to reach the goals</h2>
+      <p class="text-gray-600 mb-12 max-w-3xl mx-auto">
+        Influential leader, known for delivering cost-effective solutions and building alliances for maximum advantage
+      </p>
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Metric 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-4xl font-bold text-primary-600 mb-2">300+</h3>
+          <p class="text-gray-600">Trained for Corporate</p>
+        </div>
+        <!-- Metric 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-4xl font-bold text-primary-600 mb-2">35+</h3>
+          <p class="text-gray-600">High Impact Projects Completed</p>
+        </div>
+        <!-- Metric 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-4xl font-bold text-primary-600 mb-2">5+</h3>
+          <p class="text-gray-600">Publications</p>
+        </div>
+        <!-- Metric 4 -->
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+          <h3 class="text-4xl font-bold text-primary-600 mb-2">500+</h3>
+          <p class="text-gray-600">Students from B Schools</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 text-secondary-900">We are very happy to share client's review.</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-primary-50 p-8 rounded-lg relative">
+          <div class="flex items-center mb-6">
+            <img src="https://placehold.co/100x100" alt="Client" class="w-16 h-16 rounded-full mr-4">
+            <div>
+              <h4 class="font-semibold text-lg">Rakesh Rajora</h4>
+              <p class="text-gray-600 text-sm">Ex-Director, Deutsche Bank</p>
+            </div>
+            <div class="absolute top-8 right-8">
+              <svg class="w-8 h-8 text-primary-200" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"Anurag brings rare change management skills and has led global implementations of predictive frameworks at Deutsche Bank."</p>
+        </div>
+        <div class="bg-primary-50 p-8 rounded-lg relative">
+          <div class="flex items-center mb-6">
+            <img src="https://placehold.co/100x100" alt="Client" class="w-16 h-16 rounded-full mr-4">
+            <div>
+              <h4 class="font-semibold text-lg">Anupam Kaul</h4>
+              <p class="text-gray-600 text-sm">Founder</p>
+            </div>
+            <div class="absolute top-8 right-8">
+              <svg class="w-8 h-8 text-primary-200" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"A transformational specialist with deep understanding of operations and organizational behavior."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-gradient-to-b from-primary-50 via-white to-white section-fade">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Contact Us</h2>
+      <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="name" class="text-sm font-medium text-gray-700">Your Name*</label>
+              <input type="text" id="name" placeholder="John Doe" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-primary-600 outline-none transition duration-300">
+            </div>
+            <div class="space-y-2">
+              <label for="email" class="text-sm font-medium text-gray-700">Your Email*</label>
+              <input type="email" id="email" placeholder="john@example.com" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-primary-600 outline-none transition duration-300">
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="phone" class="text-sm font-medium text-gray-700">Phone*</label>
+              <input type="text" id="phone" placeholder="+91 98765 43210" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-primary-600 outline-none transition duration-300">
+            </div>
+            <div class="space-y-2">
+              <label for="subject" class="text-sm font-medium text-gray-700">Subject</label>
+              <input type="text" id="subject" placeholder="How can we help?" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-primary-600 outline-none transition duration-300">
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label for="message" class="text-sm font-medium text-gray-700">Your Message*</label>
+            <textarea id="message" rows="4" placeholder="Tell us about your requirements..." class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-primary-600 outline-none transition duration-300"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-primary-600 text-white py-4 rounded-lg hover:bg-primary-700 transition-all duration-300 text-sm font-semibold shadow-sm hover:shadow-md hover:-translate-y-0.5">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-gray-900 to-secondary-900 text-white py-20">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-16">
+        <div class="space-y-4">
+          <h3 class="text-xl font-bold mb-4">Capability Building & Outcome-Based Consulting</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Specializing in Data Science, Six Sigma, Lean Management, and Business Excellence. Transforming organizations through expert consulting and training.</p>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-semibold mb-4">Newsletter</h4>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="flex-1 p-3 bg-gray-800/50 rounded-l text-sm border border-gray-700 focus:outline-none focus:border-primary-600">
+            <button class="bg-primary-600 text-white px-6 py-3 rounded-r text-sm font-medium hover:bg-primary-700 transition-colors">Subscribe</button>
+          </form>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-semibold mb-4">Contact Info</h4>
+          <p class="text-gray-400 text-sm space-y-2">
+            28th St. Block<br>
+            Bengaluru, India<br>
+            +91 987 654 3210<br>
+            hello@anuragseksaria.org
+          </p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2023 Anurag Seksaria. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Add this script before the closing body tag -->
+  <script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    // Observe all sections with fade animation
+    document.querySelectorAll('.section-fade').forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
